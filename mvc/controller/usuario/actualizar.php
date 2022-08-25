@@ -10,20 +10,20 @@ if ($_POST)
 	$lastname = $_POST["Apellido_Usuario"];
 	$email = $_POST["Correo_Usuario"];
 	$password = $_POST["Password_Usuario"];
-	$id= $_POST["id_Usuario"];
-	echo $id;
-	
-	
+	$id= intval($_POST["id_Usuario"]);
+
 	try
 	{
 		$pdo->mysql->beginTransaction();
-		$pst = $pdo->mysql->prepare("update usuario set Nombre_Usuario=:nombre,Documento_Usuario=:documento, Apellido_Usuario=:apellido,Correo_Usuario=:correo, Password_Usuario=:password where id_Usuario=1");
+		//$pst = $pdo->mysql->prepare("update usuario set Nombre_Usuario=:name where id_Usuario=:id_Usuario");
+		$pst = $pdo->mysql->prepare("update usuario set Nombre_Usuario=:name,Documento_Usuario=:document, Apellido_Usuario=:lastname,Correo_Usuario=:email, Password_Usuario=:password where id_Usuario=:id_Usuario");
+
+		$pst->bindParam(":id_Usuario", $id, PDO::PARAM_INT);
+		$pst->bindParam(":name", $name, PDO::PARAM_STR);
 		$pst->bindParam(":document", $document, PDO::PARAM_STR);
-		//$pst->bindParam(":id", $id, PDO::PARAM_INT);
 		$pst->bindParam(":lastname", $lastname, PDO::PARAM_STR);
 		$pst->bindParam(":email", $email, PDO::PARAM_STR);
 		$pst->bindParam(":password", $password, PDO::PARAM_STR);
-		$pst->bindParam(":name", $name, PDO::PARAM_STR);
 		
 
 		$pst->execute();

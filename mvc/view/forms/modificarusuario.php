@@ -45,7 +45,7 @@ catch(PDOException $e)
 
   <div class="form-group">
     <label for="exampleInputEmail1">contraseña</label>
-    <input autocomplete="off" type="text" name="Password_Usuario" class="form-control" maxlength="10" required="true" pattern="[0-9]{1,10}" placeholder="Enter password" value="<?php echo $usuario['Password_Usuario']; ?>">
+    <input autocomplete="off" type="text" name="Password_Usuario" class="form-control" maxlength="10" required="true" placeholder="Enter password" value="<?php echo $usuario['Password_Usuario']; ?>">
   </div>
 
   <div class="form-group">

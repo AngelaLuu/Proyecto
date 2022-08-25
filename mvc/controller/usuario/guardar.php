@@ -24,6 +24,8 @@ if ($_POST)
 	
 
 		$pst = $pdo->mysql->prepare("insert into usuario() values(:id,:name,:lastame,:email,:password,:document)");
+		$id = $pdo->mysql->lastInsertId();
+
 		$pst->bindParam(":document", $document, PDO::PARAM_STR);
 		$pst->bindParam(":id", $id, PDO::PARAM_INT);
 		$pst->bindParam(":lastname", $lastname, PDO::PARAM_STR);
@@ -35,7 +37,6 @@ if ($_POST)
 
 		$pst->execute();
 		
-		$id = $pdo->mysql->lastInsertId();
 		
 		$pdo->mysql->commit();
 	
