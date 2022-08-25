@@ -8,16 +8,18 @@
  		$pdo = new db();
  		$pdo->mysql->beginTransaction();
  		$id = $_GET["id"];
- 		$pst = $pdo->mysql->prepare("delete from cliente where id = :id");
+ 		$pst = $pdo->mysql->prepare("delete from usuario where id = :id_Usuario");
 		$pst->bindParam(":id", $id, PDO::PARAM_STR);
 		$pst->execute();
 		$pdo->mysql->commit();
-		header("Location:../../view/layout/layouts/layout.php?menu=mostrarcliente");
+		header("Location:../view/layout/layout.php?menu=mostrarusuario");
  	}
  	catch(PDOException $ex)
  	{
- 		echo "El cliente no pudo ser eliminado.";
+ 		echo "El usuario no pudo ser eliminado.";
  		$pdo->mysql->rollback();
  	}
 
  }
+ 
+ 

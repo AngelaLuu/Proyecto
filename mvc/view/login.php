@@ -10,8 +10,10 @@ session_start();
         foreach($cuentas as $cuenta)
         {
             $_SESSION['Correo'] = $cuenta['Correo_Usuario'];
+            $_SESSION['sesion'] = $cuenta['Correo_Usuario'];
+
            
-            header("Location: mvc/view/layout/layouts/layout.php");
+            header("Location: layout/layout.php");
         }
         $validacion ="<div class='alert alert-danger'><center><strong>Ojo!</strong> el usuario o contraseña es incorrecta.</div>" ;
         

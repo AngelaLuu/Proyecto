@@ -23,16 +23,12 @@ if ($_POST)
 		//$pst = $pdo->mysql->prepare("insert into usuario () values (120 ,'harold@camasf','11561dasd','activo','hhuhas','151156'");
 	
 
-		$pst = $pdo->mysql->prepare("insert into usuario() values(:id,:name,:document,:lastname,:email,:password)");
+		$pst = $pdo->mysql->prepare("insert into usuario() values(:id,:name,:lastame,:email,:password,:document)");
 		$pst->bindParam(":document", $document, PDO::PARAM_STR);
 		$pst->bindParam(":id", $id, PDO::PARAM_INT);
-		
 		$pst->bindParam(":lastname", $lastname, PDO::PARAM_STR);
-		
 		$pst->bindParam(":email", $email, PDO::PARAM_STR);
-		
 		$pst->bindParam(":password", $password, PDO::PARAM_STR);
-		
 		$pst->bindParam(":name", $name, PDO::PARAM_STR);
 		
 
@@ -43,18 +39,18 @@ if ($_POST)
 		
 		$pdo->mysql->commit();
 	
-		header("Location:../../view/layout/layouts/layout.php?menu=mostrarcliente");
+		header("Location:../../view/layout/layout.php?menu=mostrarusuario");
 	}
 	catch(PDOException $ex)
 	{
 		$pdo->mysql->rollback();
 		echo $ex;
 
-		echo "El cliente ya existe.";
+		echo "El usuario ya existe.";
 		echo "<a href='#' onclick=javascript:window.history.back()>Regresar</a>"; 
 		$HTTP_REFERER;
 		header("Location:".$_SERVER['HTTP_REFERER']); 
-		echo "El cliente ya existe.";
+		echo "El usuario ya existe.";
 	}
 
 

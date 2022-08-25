@@ -16,7 +16,7 @@ class db
 	private function getConnection()
 	{
 		$host="localhost";
-		$port="3306";
+		$port="3307";
 		$user="root";
 		$pass= "";
 		$database = "Agendamiento_Proyectu";
