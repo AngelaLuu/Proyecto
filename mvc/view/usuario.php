@@ -28,9 +28,10 @@
         <td>{$usuario['Correo_Usuario']}</td>
         <td>{$usuario['Password_Usuario']}</td>
         <td>{$usuario['Documento_Usuario']}</td>
-        <td><a title='Modificar' data-toggle='popover' data-trigger='hover' href='../controller/usuario/modificar.php&id={$usuario['id_Usuario']}'><i class='fas fa-user-edit'></i></a></td>
-        <td><a  title='Eliminar' data-toggle='popover' data-trigger='hover' href='../controller/usuario/eliminar.php?id={$usuario['id_Usuario']}'><i class='fas fa-user-times btn-outline-danger'></i></a></td> </tr>";
+        <td><a title='Modificar' data-toggle='popover' data-trigger='hover' href='?menu=mostrarmodificarusuario&id={$usuario['id_Usuario']}'><i class='fas fa-user-edit'></i></a></td>
+        <td><a  title='Eliminar' data-toggle='popover' data-trigger='hover' href='../../../mvc/controller/usuario/eliminar.php?id={$usuario['id_Usuario']}'><i class='fas fa-user-times btn-outline-danger'></i></a></td> </tr>";
   }
+  echo __FILE__;
 ?>
     </tbody>
   </table>

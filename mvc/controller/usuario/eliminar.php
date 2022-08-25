@@ -8,11 +8,11 @@
  		$pdo = new db();
  		$pdo->mysql->beginTransaction();
  		$id = $_GET["id"];
- 		$pst = $pdo->mysql->prepare("delete from usuario where id = :id_Usuario");
+ 		$pst = $pdo->mysql->prepare("delete from usuario where id_Usuario= :id");
 		$pst->bindParam(":id", $id, PDO::PARAM_STR);
 		$pst->execute();
 		$pdo->mysql->commit();
-		header("Location:../view/layout/layout.php?menu=mostrarusuario");
+		header("Location:../../view/layout/layout.php?menu=mostrarusuario");
  	}
  	catch(PDOException $ex)
  	{

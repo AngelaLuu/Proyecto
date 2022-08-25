@@ -9,11 +9,11 @@ if (isset($_GET ['menu'])) {
         require_once('../usuario.php'); 
     }
     if($_GET ['menu'] =='mostrarmodificarusuario'){ 
-        require_once('../../../controller/usuario/modificar.php');
+        require_once('../forms/modificarusuario.php');
     } 
 
 } 
 else {
-    require_once('../../empleado.php'); 
+    //require_once('../../empleado.php'); 
 }
 ?>

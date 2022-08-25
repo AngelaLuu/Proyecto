@@ -5,18 +5,19 @@ if ($_POST)
 {
 	require("../../model/mysql.php"); 
 	$pdo = new db();
-	$document = $_POST["document"]; 
-	$name = $_POST["name"];
-	$lastname = $_POST["lastname"];
-	$email = $_POST["email"];
-	$password = $_POST["password"];
-	$id= $_POST["id"];
+	$document = $_POST["Documento_Usuario"]; 
+	$name = $_POST["Nombre_Usuario"];
+	$lastname = $_POST["Apellido_Usuario"];
+	$email = $_POST["Correo_Usuario"];
+	$password = $_POST["Password_Usuario"];
+	$id= $_POST["id_Usuario"];
+	echo $id;
 	
 	
 	try
 	{
 		$pdo->mysql->beginTransaction();
-		$pst = $pdo->mysql->prepare("update usuario set nombre=:nombre,apellido=:apellido,correo=:correo, password=:password where id=:id");
+		$pst = $pdo->mysql->prepare("update usuario set Nombre_Usuario=:nombre,Documento_Usuario=:documento, Apellido_Usuario=:apellido,Correo_Usuario=:correo, Password_Usuario=:password where id_Usuario=:id");
 		$pst->bindParam(":document", $document, PDO::PARAM_STR);
 		$pst->bindParam(":id", $id, PDO::PARAM_INT);
 		$pst->bindParam(":lastname", $lastname, PDO::PARAM_STR);
@@ -27,7 +28,7 @@ if ($_POST)
 
 		$pst->execute();
 		$pdo->mysql->commit();
-		header("Location:../../view/layout/layouts/layout.php?menu=mostrarcliente");
+		header("Location:../../view/layout/layout.php?menu=mostrarusuario");
 	}
 	catch(PDOException $ex)
 	{
