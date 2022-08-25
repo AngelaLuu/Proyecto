@@ -17,9 +17,9 @@ if ($_POST)
 	try
 	{
 		$pdo->mysql->beginTransaction();
-		$pst = $pdo->mysql->prepare("update usuario set Nombre_Usuario=:nombre,Documento_Usuario=:documento, Apellido_Usuario=:apellido,Correo_Usuario=:correo, Password_Usuario=:password where id_Usuario=:id");
+		$pst = $pdo->mysql->prepare("update usuario set Nombre_Usuario=:nombre,Documento_Usuario=:documento, Apellido_Usuario=:apellido,Correo_Usuario=:correo, Password_Usuario=:password where id_Usuario=1");
 		$pst->bindParam(":document", $document, PDO::PARAM_STR);
-		$pst->bindParam(":id", $id, PDO::PARAM_INT);
+		//$pst->bindParam(":id", $id, PDO::PARAM_INT);
 		$pst->bindParam(":lastname", $lastname, PDO::PARAM_STR);
 		$pst->bindParam(":email", $email, PDO::PARAM_STR);
 		$pst->bindParam(":password", $password, PDO::PARAM_STR);

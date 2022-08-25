@@ -25,7 +25,7 @@ catch(PDOException $e)
 ?>
   <div class="form-group">
     <label for="exampleInputEmail1">id</label>
-    <input autocomplete="off" type="text" name="id_Usuario" class="form-control" maxlength="10" required="true"  placeholder="Enter id" value="<?php echo $id; ?>" readonly='readonly'>
+    <input autocomplete="off" type="number" name="id_Usuario" class="form-control" maxlength="10" required="true"  placeholder="Enter id" value="<?php echo $id; ?>" readonly='readonly'>
   </div>
 
   <div class="form-group">

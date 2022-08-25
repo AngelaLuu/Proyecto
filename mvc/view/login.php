@@ -32,7 +32,7 @@ session_start();
             <div class="botondeintercambiar">
                 <div id="btnvai"></div>
                  <button type="button" class="botoncambiarcaja" onclick="loginvai()" id="vaibtnlogin">Login</button>
-                 <button type="button" class="botoncambiarcaja" onclick="registrarvai()" id="vaibtnregistrar">Registrar</button>
+                 
             </div>
     <form method="POST" action="login.php" id="frmlogin" class="grupo-entradas">
     <div class="ub1">&#128273; NOMBRE USUARIO</div>
@@ -53,84 +53,4 @@ session_start();
     </div>
     </form>
 
-    <!----------------------------------------REGISTRO------------------------------------------------->
-
-    <form method="post" action="../controller/usuario/guardar.php" id="frmregistrar" class="grupo-entradas">
-    <div class="ub1">&#128273; DOCUMENTO </div>
-    <input type="text" name="document" placeholder="Ingresar documento usuario">
-    <div class="ub1">&#128274; NOMBRE </div>
-    <input type="text" name="name" placeholder="Ingresar apellido usuario">
-    <div class="ub1">&#128274; APELLIDO </div>
-    <input type="text" name="lastname" placeholder="ingresar correo usuario">
-    <!--<div class="ub1">📧; CORREO </div>-->
-    <input type="text"  name="email" placeholder="Ingresar usuario">
-    <!--<div class="ub1">&#128274; INGRESAR PASSWORD</div>-->
-    <input type="password" name="password" id="txtpassword2" placeholder="Ingresar password">
-    
-    <div class="ub1">
-    <input type="checkbox" onclick="verpassword2()" >Mostrar contraseña
-     </div>
-    </select>
-    
-    <div align="center">
-    <input type="submit" value="Registrar">
-    
-    <input type="reset" value="Limpiar">
-    </div>
-    </form>
-    </div>
-    
-    </body>
-    <script>
-      function verpassword()
-      {
-          var tipo = document.getElementById("txtpassword");
-          if(tipo.type == "password")
-          {
-              tipo.type = "text";
-          }
-          else 
-          {
-              tipo.type = "password";
-          } 
-      }
-        function verpassword2()
-      {
-          var tipo = document.getElementById("txtpassword2");
-          if(tipo.type == "password")
-          {
-              tipo.type = "text";
-          }
-          else 
-          {
-              tipo.type = "password";
-          } 
-      }
-      
-        var x = document.getElementById("frmlogin");
-        var y = document.getElementById("frmregistrar");
-        var z = document.getElementById("btnvai");
-    
-    
-            function registrarvai()
-            {
-                
-                x.style.left = "-400px";
-                y.style.left = "50px";
-                z.style.left = "110px";
-    
-        
-            }
-                function loginvai()
-            {
-                
-                x.style.left = "50px";
-                y.style.left = "450px";
-                z.style.left = "0";
-    
-    
-            }
-            
-    
-    </script>
-    </html>
+   
