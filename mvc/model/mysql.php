@@ -19,7 +19,7 @@ class db
 		$port="3306";
 		$user="root";
 		$pass= "";
-		$database = "Agendamiento_Proyectoo";
+		$database = "Agendamiento_Proyectu";
 		$charset = "utf8";
 		$opt = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO:: FETCH_ASSOC];
 		$pdo = new pdo("mysql:host={$host};port={$port};dbname={$database}; charset={$charset}",$user,$pass, $opt);

@@ -1,5 +1,4 @@
 <?php
-echo "entre";
 if ($_POST)
 {
 	require("../../model/mysql.php"); 
@@ -14,36 +13,37 @@ if ($_POST)
 	echo $email;
 	$password = $_POST["password"];
 	echo $password;
-	$id= 120;
+	$id= $_POST["id"];
+	echo $id; 
 
 	try
 	{
 		$pdo->mysql->beginTransaction();
 	
-		$pst = $pdo->mysql->prepare("insert into usuario () values (120 ,'harold@camasf','11561dasd','activo','hhuhas','151156'");
-		echo "papa";
+		//$pst = $pdo->mysql->prepare("insert into usuario () values (120 ,'harold@camasf','11561dasd','activo','hhuhas','151156'");
+	
 
-		//$pst = $pdo->mysql->prepare("insert into usuario() values(:name,:document,:lastname,:correo,:telefono,:ciudad,:direccion)");
+		$pst = $pdo->mysql->prepare("insert into usuario() values(:id,:name,:document,:lastname,:email,:password)");
 		$pst->bindParam(":document", $document, PDO::PARAM_STR);
-		//$pst->bindParam(":id", $id, PDO::PARAM_INT);
-		echo "oh";
+		$pst->bindParam(":id", $id, PDO::PARAM_INT);
+		
 		$pst->bindParam(":lastname", $lastname, PDO::PARAM_STR);
-		echo "aa";
+		
 		$pst->bindParam(":email", $email, PDO::PARAM_STR);
-		echo "in";
+		
 		$pst->bindParam(":password", $password, PDO::PARAM_STR);
-		echo "pum";
+		
 		$pst->bindParam(":name", $name, PDO::PARAM_STR);
-		echo "estoy aqui";
+		
 
 
 		$pst->execute();
-		echo "esti";
+		
 		$id = $pdo->mysql->lastInsertId();
-		echo "estui";
+		
 		$pdo->mysql->commit();
-		echo "est";
-		//header("Location:../../view/layout/layouts/layout.php?menu=mostrarcliente");
+	
+		header("Location:../../view/layout/layouts/layout.php?menu=mostrarcliente");
 	}
 	catch(PDOException $ex)
 	{
@@ -53,7 +53,7 @@ if ($_POST)
 		echo "El cliente ya existe.";
 		echo "<a href='#' onclick=javascript:window.history.back()>Regresar</a>"; 
 		$HTTP_REFERER;
-		//header("Location:".$_SERVER['HTTP_REFERER']); 
+		header("Location:".$_SERVER['HTTP_REFERER']); 
 		echo "El cliente ya existe.";
 	}
 

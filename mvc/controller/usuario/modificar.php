@@ -5,13 +5,13 @@
 </head>
 <body>
 
-<form method="post" action="../../../controller/cliente/actualizar.php">
+<form method="post" action="../../../controller/usuario/actualizar.php">
 <?php
 $pdo = new db();
 try
 {
 	$id = $_GET["id"];
-	$datoscliente = $pdo->mysql->prepare("select * from cliente where id = :id");
+	$datoscliente = $pdo->mysql->prepare("select * from usuario where id = :id");
 	$datoscliente->bindParam(":id", $id, PDO::PARAM_INT);
 	$datoscliente->execute();
 	$cliente = $datoscliente->fetch();
