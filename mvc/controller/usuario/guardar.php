@@ -1,6 +1,8 @@
-<?php
+<?php 
+echo 'ASFAFAAAAAAAAAAAAAAAAAAAAAAAAA';
 if ($_POST)
 {
+
 	require("../../model/mysql.php"); 
 	$pdo = new db();
 	$document = $_POST["document"]; 
@@ -13,8 +15,8 @@ if ($_POST)
 	echo $email;
 	$password = $_POST["password"];
 	echo $password;
-	$id= $_POST["id"];
-	echo $id; 
+	
+
 
 	try
 	{
@@ -23,7 +25,7 @@ if ($_POST)
 		//$pst = $pdo->mysql->prepare("insert into usuario () values (120 ,'harold@camasf','11561dasd','activo','hhuhas','151156'");
 	
 
-		$pst = $pdo->mysql->prepare("insert into usuario() values(:id,:name,:lastame,:email,:password,:document)");
+		$pst = $pdo->mysql->prepare("insert into usuario() values(:id,:name,:lastname,:email,:password,:document, 'activo')");
 		$id = $pdo->mysql->lastInsertId();
 
 		$pst->bindParam(":document", $document, PDO::PARAM_STR);
@@ -36,11 +38,10 @@ if ($_POST)
 
 
 		$pst->execute();
-		
-		
+		$id = $pdo->mysql->lastInsertId();
 		$pdo->mysql->commit();
 	
-		header("Location:../../view/layout/layout.php?menu=mostrarusuario");
+		header("Location:../../view/login.php");
 	}
 	catch(PDOException $ex)
 	{
@@ -50,7 +51,7 @@ if ($_POST)
 		echo "El usuario ya existe.";
 		echo "<a href='#' onclick=javascript:window.history.back()>Regresar</a>"; 
 		$HTTP_REFERER;
-		header("Location:".$_SERVER['HTTP_REFERER']); 
+		//header("Location:".$_SERVER['HTTP_REFERER']); 
 		echo "El usuario ya existe.";
 	}
 
