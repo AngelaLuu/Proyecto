@@ -61,10 +61,10 @@
                 <div class="ub1">&#128274; APELLIDO </div>
                 <input type="text" name="lastname" placeholder="ingresar Apellido usuario">
 
-                <!-- <div class="ub1">📧 CORREO </div> -->
+                <div class="ub1">📧 CORREO </div>
                 <input type="text"  name="email" placeholder="Ingresar correo">
 
-                <!-- <div class="ub1">&#128274; INGRESAR PASSWORD</div> -->
+                <div class="ub1">&#128274; INGRESAR PASSWORD</div> 
                 <input type="password" name="password" id="txtpassword2" placeholder="Ingresar password">
                 
                 <div class="ub1">
