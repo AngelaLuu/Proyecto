@@ -11,6 +11,7 @@
         {
             $_SESSION['Correo'] = $cuenta['Correo_Usuario'];
             $_SESSION['sesion'] = $cuenta['Correo_Usuario'];
+            $_SESSION['rol'] = $cuenta ['rol'];
 
             header("Location: layout/layout.php");
         }
