@@ -16,10 +16,10 @@ class db
 	private function getConnection()
 	{
 		$host="localhost";
-		$port="3307";
+		$port="3306";
 		$user="root";
 		$pass= "";
-		$database = "Agendamiento_Proyectu";
+		$database = "id19741008_agendamiento_proyectu";
 		$charset = "utf8";
 		$opt = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO:: FETCH_ASSOC];
 		$pdo = new pdo("mysql:host={$host};port={$port};dbname={$database}; charset={$charset}",$user,$pass, $opt);

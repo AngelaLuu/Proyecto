@@ -18,7 +18,7 @@
                <p class="logo">NORTHWEST MEMORIAL HOSPITAL</p>
                <nav>
                    <a href="mvc/view/login.php">INICIO SESION</a>
-                   <a href="#NUESTROS-PROGRAMAS">SERVICIOS Y ESPECIALIDADES</a>
+                   <a href="mvc/view/layout/layout.php">CRUD</a>
                    <a href="#">CONTACTENOS</a>
                </nav>
            </div>

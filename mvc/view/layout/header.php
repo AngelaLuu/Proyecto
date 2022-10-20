@@ -68,7 +68,8 @@ integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zF
 
 <header>
     <nav class="navbar navbar-expand-lg    text-dark ">
-        <a class="navbar-brand text-dark title" href="#" >CarTech</a>
+        <a class="navbar-brand text-dark title" href="#" >NORTHWEST HOSPITAL</a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>

@@ -16,4 +16,4 @@ $mensajeCompleto = $nombre . $apellido . $telefono . $especialidad . $contraseñ
 
 mail ($destinatario, $mensajeCompleto, $header);
 echo "<script>alert('revisa tu correo para confirmacion') </script>";
-echo "<script> serTimeout(\"location.href='login.php'\,1000)</script>";
+echo "<script> serTimeout(\"location.href='mvc/view/login.php'\,1000)</script>";

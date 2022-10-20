@@ -13,7 +13,7 @@
             $_SESSION['sesion'] = $cuenta['Correo_Usuario'];
             $_SESSION['rol'] = $cuenta ['rol'];
 
-            header("Location: layout/layout.php");
+            header("Location: mostrarusuario.html");
         }
         $validacion ="<div class='alert alert-danger'><center><strong>Ojo!</strong> el usuario o contraseña es incorrecta.</div>" ;
         
