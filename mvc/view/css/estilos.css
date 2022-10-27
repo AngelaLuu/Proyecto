@@ -35,7 +35,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../images1/inicio.jpg');
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../https://estaticos-cdn.sport.es/clip/903b6f77-2235-4e6a-85c6-d5f585fec76c_media-libre-aspect-ratio_default_0.jpg/inicio.jpg');
     background-size: cover;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
     z-index: -1;

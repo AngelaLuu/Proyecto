@@ -25,7 +25,7 @@
        </header>
        <SECTION id="HERO">
            <H1>SOMOS UNA INSTITUCI&OacuteN ENFOCADA <br>EN EL BIENESTAR  <br>  F&IacuteSICO, MENTAL Y ECON&OacuteMICO <br> DEL PACIENTE</H1>
-           <BUTton>REGISTRATE</BUTton>
+           <BUTton><a href="mvc/view/login.php">REGISTRATE</BUTton></a>
        </SECTION>
        
        <section id="somos-tu">
@@ -73,7 +73,8 @@
 
        <SECTION ID="AFILIATE">
            <H2> AFILIATE </H2>
-           <button>CREA TU CUENTA</button>
+           <button><a href="mvc/view/login.php">CREA TU CUENTA</button></a>
+           
        </SECTION>
  
        <FOOTER>

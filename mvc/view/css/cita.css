@@ -1,0 +1,97 @@
+*
+{
+	font-family:arial;
+	text-align:center;
+	 margin: 0;
+	padding: 0;
+	
+}
+body
+{
+	top:5%;
+	left:43%;
+	position:absolute;
+	transform: translate(-50%,-50%);
+		background-image: url("https://cdn.oes.org.co/wp-content/uploads/2019/09/Hospital-2-1200x600.jpg");   
+        background-size: cover;
+        background-repeat:no-repeat;
+  }
+
+.ub1 /* nombre de caja de texto */
+{
+text-align:left;
+font-weight: bold;
+color:rgb(15, 12, 12);
+margin-bottom:0.5em;
+margin-top:0.5em;
+padding: 15px;
+}
+
+.grupo-entradas{
+    position:absolute;
+    width:20em;
+	height: auto;
+    transition: .5s;
+	
+}
+
+#btnenviar :hover{
+    background-color: #209608;
+    cursor: pointer;
+}
+input, select /* botones */
+{
+	width: 100%;
+    padding: 0.5em;
+	font-size:1em;
+	border-radius:20px;
+	border:1px solid black;
+	color:black;
+	text-align:left;
+	cursor:pointer;
+	
+}
+
+input::placeholder  /* letra botones */
+{
+  color: #1E265D;
+  font-weight: bold;
+   opacity: 0.5; 
+}
+
+input[type=submit]:hover
+{
+    background-color: #209608;
+}
+
+input[type=reset]:hover
+{
+    background-color: #d6290b;
+}
+
+input[type=submit],input[type=reset]
+{
+margin-top: 1.5em;
+width:45%;
+text-align:center;
+background-color: #1958AD;
+color:white;
+
+}
+input[type=checkbox]
+{
+margin-left:0;
+width:10%;
+
+}
+
+#btnvai{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 130px;
+    height: 100%;
+	background-color: #1C62C1;
+    border-radius: 30px;
+	transition: .5s;
+}

@@ -1,5 +1,5 @@
 <?php 
-echo 'ASFAFAAAAAAAAAAAAAAAAAAAAAAAAA';
+
 if ($_POST)
 {
 
@@ -15,6 +15,7 @@ if ($_POST)
 	echo $email;
 	$password = $_POST["password"];
 	echo $password;
+	$rol = $_POST["rol"];
 	
 
 
@@ -25,7 +26,7 @@ if ($_POST)
 		//$pst = $pdo->mysql->prepare("insert into usuario () values (120 ,'harold@camasf','11561dasd','activo','hhuhas','151156'");
 	
 
-		$pst = $pdo->mysql->prepare("insert into usuario() values(:id,:name,:lastname,:email,:password,:document, 'activo')");
+		$pst = $pdo->mysql->prepare("insert into usuario() values(:id,:name,:lastname,:email,:password,:document, 'activo',:rol )");
 		$id = $pdo->mysql->lastInsertId();
 
 		$pst->bindParam(":document", $document, PDO::PARAM_STR);
@@ -34,14 +35,14 @@ if ($_POST)
 		$pst->bindParam(":email", $email, PDO::PARAM_STR);
 		$pst->bindParam(":password", $password, PDO::PARAM_STR);
 		$pst->bindParam(":name", $name, PDO::PARAM_STR);
-		
+		$pst->bindParam(":rol", $rol, PDO::PARAM_INT);
 
 
 		$pst->execute();
 		$id = $pdo->mysql->lastInsertId();
 		$pdo->mysql->commit();
 	
-		header("Location:../../view/login.php");
+		header("Location:../../view/mostrarusuario.html");
 	}
 	catch(PDOException $ex)
 	{
